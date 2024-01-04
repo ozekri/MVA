@@ -25,13 +25,12 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/SysCV/sam-pt?tab=readme-ov-file">
+  <a href="https://www.master-mva.com/">
     <img src="https://centreborelli.ens-paris-saclay.fr/sites/centre_borelli/files/styles/img__480x320__crop_main/public/media/images/xlogo_mva_935x701.jpg,qitok=1BfZ2kri.pagespeed.ic.r35R1bGACN.jpg" alt="Logo" width="200" height="150">
   </a>
-<h3 align="center">Project RecVis 2023/2024 : SAM-PT</h3>
+<h3 align="center">Project RecVis 2023/2024 : [SAM-PT](https://github.com/SysCV/sam-pt?tab=readme-ov-file)</h3>
 
 </div>
-
 
 
 <!-- TABLE OF CONTENTS -->
