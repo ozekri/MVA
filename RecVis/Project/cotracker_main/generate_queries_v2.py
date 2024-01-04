@@ -7,7 +7,7 @@ from cotracker.utils.visualizer import Visualizer, read_video_from_path
 from cotracker.predictor import CoTrackerPredictor
 from IPython.display import HTML
 
-path_vid = os.path.abspath('../data/lucia/anim.mp4') #path of a video
+path_vid = os.path.abspath('../data/swing/anim.mp4') #path of a video
 
 video = read_video_from_path(path_vid)
 video = torch.from_numpy(video).permute(0, 3, 1, 2)[None].float()
@@ -39,7 +39,7 @@ if torch.cuda.is_available():
 
 
 eps_L,eps_l = 100., 100.
-n=50
+n=150
 
 x_rand = np.random.rand(n,1)*(float(video.shape[4])-2*eps_L) + eps_L
 y_rand = np.random.rand(n,1)*(float(video.shape[3])-2*eps_l) + eps_l
@@ -76,10 +76,11 @@ for i in range(n):
 
 c=0
 point_hash={} #hasmap with the points index in key and the label True if positive, False if negative in values
+tresh = 0.015
 for idx,p in enumerate(plist):
     #print(sum_dist(p))
     #print(is_Positive(p,0.02))
-    if is_Positive(p,0.02):
+    if is_Positive(p,tresh):
         c+=1
         point_hash[idx] = True
     else: point_hash[idx] = False
@@ -109,14 +110,15 @@ x_rand_2[-1] = x_neg
 y_rand_2 = np.random.rand(n_2+1,1)*(max_y-min_y) + min_y
 y_rand_2[-1] = y_neg
 
-frames_num_2 = np.zeros((1,n_2+1),dtype=int).T
+firstframe = 0
+frames_num_2 = np.zeros((1,n_2+1),dtype=int).T + firstframe
 
 points_2 = np.hstack((frames_num_2,x_rand_2,y_rand_2))
 
 queries_2 = torch.tensor(points_2.tolist())
 
 ###########
-nom='queries_lucia.txt'      #on crée une variable de type string
+nom='queries_swing_new.txt'      #on crée une variable de type string
 fichier=open(nom,'w')#ouverture du fichier en écriture : 'w' pour write
 ecr_pos,ecr_neg='',''
 for i in range(len(points_2)-1):

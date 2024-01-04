@@ -7,7 +7,7 @@ from cotracker.utils.visualizer import Visualizer, read_video_from_path
 from cotracker.predictor import CoTrackerPredictor
 from IPython.display import HTML
 
-path_vid = os.path.abspath('../data/lucia/anim.mp4') #path of a video
+path_vid = os.path.abspath('../data/hockey/anim.mp4') #path of a video
 
 video = read_video_from_path(path_vid)
 video = torch.from_numpy(video).permute(0, 3, 1, 2)[None].float()
@@ -18,17 +18,17 @@ def show_video(video_path): #function that display a video
 #show_video(path_vid)
 
 #Importing CoTrackerPredictor and creating an instance of it
-model = CoTrackerPredictor(
-    checkpoint=os.path.join(
-        './checkpoints/cotracker_stride_4_wind_8.pth'
-    )
-)
-
 """model = CoTrackerPredictor(
+    checkpoint=os.path.join(
+        './checkpoints/cotracker2.pth'
+    )
+)"""
+
+model = CoTrackerPredictor(
     checkpoint=os.path.join(
         'C:/Users/dofel/Desktop/cotracker2.pth'
     )
-)"""
+)
 
 
 if torch.cuda.is_available():
@@ -111,10 +111,11 @@ for i in range(n):
 
 c=0
 point_hash={} #hasmap with the points index in key and the label True if positive, False if negative in values
+tresh = 0.008
 for idx,p in enumerate(plist):
     #print(sum_dist(p))
     #print(is_Positive(p,0.02))
-    if is_Positive(p,0.02):
+    if is_Positive(p,tresh):
         c+=1
         point_hash[idx] = True
     else: point_hash[idx] = False
@@ -122,7 +123,7 @@ for idx,p in enumerate(plist):
 print(c) #counter
 print(point_hash) #point list with labels
 
-nom='queries_lucia.txt'      #on crée une variable de type string
+nom='queries_hockey.txt'      #on crée une variable de type string
 fichier=open(nom,'w')#ouverture du fichier en écriture : 'w' pour write
 ecr_pos,ecr_neg='',''
 for i in range(len(points)):
