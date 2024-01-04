@@ -126,7 +126,7 @@ for i in range(len(points)):
 final = str(points[0][0])+';' + ecr_pos +ecr_neg
 fichier.write(str(c)+'\n')
 fichier.write(final)
-fichier.close()
+fichier.close() #close the document
 
 vis = Visualizer(
     save_dir='./videos',
