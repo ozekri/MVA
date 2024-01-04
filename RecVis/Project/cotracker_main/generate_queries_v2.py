@@ -7,7 +7,7 @@ from cotracker.utils.visualizer import Visualizer, read_video_from_path
 from cotracker.predictor import CoTrackerPredictor
 from IPython.display import HTML
 
-path_vid = os.path.abspath('../data/bus/anim.mp4') #path of a video
+path_vid = os.path.abspath('../data/goat/anim.mp4') #path of a video
 
 video = read_video_from_path(path_vid)
 video = torch.from_numpy(video).permute(0, 3, 1, 2)[None].float()
@@ -42,45 +42,11 @@ frames_num = np.zeros((1,n),dtype=int).T
 points = np.hstack((frames_num,x_rand,y_rand))
 
 queries = torch.tensor(points.tolist())
-#print(points)
 
-"""queries = torch.tensor([
-    [0., eps_L, eps_l],  # point tracked from the first frame
-    [0., float(video.shape[4])-eps_L, eps_l], # frame number 0
-    [0., eps_l, float(video.shape[3])-eps_l], # ...
-    [0., float(video.shape[4])-eps_L, float(video.shape[3])-eps_l]
-])
 
-queries = torch.tensor([
-    [0., 400., 350.],  # point tracked from the first frame
-    [0., 600., 500.], # frame number 10
-    [0., 750., 600.], # ...
-    [0., 900., 200.]
-])"""
 if torch.cuda.is_available():
     queries = queries.cuda()
     
-"""
-import matplotlib.pyplot as plt
-# Create a list of frame numbers corresponding to each point
-frame_numbers = queries[:,0].int().tolist()
-
-fig, axs = plt.subplots(2, 2)
-axs = axs.flatten()
-
-for i, (query, frame_number) in enumerate(zip(queries, frame_numbers)):
-    ax = axs[i]
-    ax.plot(query[1].item(), query[2].item(), 'ro') 
-    
-    ax.set_title("Frame {}".format(frame_number))
-    ax.set_xlim(0, video.shape[4])
-    ax.set_ylim(0, video.shape[3])
-    ax.invert_yaxis()
-    
-plt.tight_layout()
-plt.show()
-
-"""
 
 
 pred_tracks, pred_visibility = model(video, queries=queries[None])
@@ -120,12 +86,12 @@ min_x,max_x,min_y,max_y = np.inf,0.0,np.inf,0.0
 x_neg,y_neg=0.0,0.0
 for i in range(len(points)):
     if point_hash[i]:
-        if min_x >= point_hash[i][1] : min_x = point_hash[i][1]
-        if max_x <= point_hash[i][1] : max_x = point_hash[i][1]
-        if min_y >= point_hash[i][2] : min_y = point_hash[i][2]
-        if max_y <= point_hash[i][2] : max_y = point_hash[i][2]
+        if min_x >= points[i][1] : min_x = points[i][1]
+        if max_x <= points[i][1] : max_x = points[i][1]
+        if min_y >= points[i][2] : min_y = points[i][2]
+        if max_y <= points[i][2] : max_y = points[i][2]
     else:
-        x_neg,y_neg = point_hash[i][1],point_hash[i][2]
+        x_neg,y_neg = points[i][1],points[i][2]
     
 
 ##########
@@ -144,7 +110,7 @@ points_2 = np.hstack((frames_num_2,x_rand_2,y_rand_2))
 queries_2 = torch.tensor(points_2.tolist())
 
 ###########
-nom='queries_new.txt'      #on crée une variable de type string
+nom='queries_goat.txt'      #on crée une variable de type string
 fichier=open(nom,'w')#ouverture du fichier en écriture : 'w' pour write
 ecr_pos,ecr_neg='',''
 for i in range(len(points_2)-1):

@@ -115,7 +115,7 @@ for idx,p in enumerate(plist):
 print(c) #counter
 print(point_hash) #point list with labels
 
-nom='queries_bus.txt'      #on crée une variable de type string
+nom='queries_goat.txt'      #on crée une variable de type string
 fichier=open(nom,'w')#ouverture du fichier en écriture : 'w' pour write
 ecr_pos,ecr_neg='',''
 for i in range(len(points)):
