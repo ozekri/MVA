@@ -93,20 +93,19 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/ozekri/MVA/main/RecVis/Project
    ```
-3. Install NPM packages
+2. Install co-tracker and download the checkpoints of cotracker2
    ```sh
-   npm install
+   %cd co-tracker
+  !pip install -e .
+  !pip install opencv-python einops timm matplotlib moviepy flow_vis
+  !mkdir checkpoints
+  %cd checkpoints
+  !wget https://huggingface.co/facebook/cotracker/resolve/main/cotracker2.pth
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
