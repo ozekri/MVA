@@ -169,6 +169,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contact
 
 Oussama ZEKRI - oussama.zekri@ens-paris-saclay.fr - [@twitter_handle](https://twitter.com/oussamazekri_)
+
 Elyas BENYAMINA - elyas.benyamina@ens-paris-saclay.fr - [@twitter_handle](https://twitter.com/oussamazekri_)
 
 [Project Link](https://github.com/ozekri/MVA/tree/main/RecVis/Project)
