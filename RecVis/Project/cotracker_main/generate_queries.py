@@ -18,17 +18,17 @@ def show_video(video_path): #function that display a video
 #show_video(path_vid)
 
 #Importing CoTrackerPredictor and creating an instance of it
-"""model = CoTrackerPredictor(
+model = CoTrackerPredictor(
     checkpoint=os.path.join(
         './checkpoints/cotracker_stride_4_wind_8.pth'
     )
-)"""
+)
 
-model = CoTrackerPredictor(
+"""model = CoTrackerPredictor(
     checkpoint=os.path.join(
         'C:/Users/dofel/Desktop/cotracker2.pth'
     )
-)
+)"""
 
 
 if torch.cuda.is_available():
