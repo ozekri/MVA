@@ -99,12 +99,12 @@ This is an example of how to list things you need to use the software and how to
    ```
 2. Install co-tracker and download the checkpoints of cotracker2
    ```sh
-   %cd co-tracker
-  !pip install -e .
-  !pip install opencv-python einops timm matplotlib moviepy flow_vis
-  !mkdir checkpoints
-  %cd checkpoints
-  !wget https://huggingface.co/facebook/cotracker/resolve/main/cotracker2.pth
+   cd co-tracker
+   pip install -e .
+   pip install opencv-python einops timm matplotlib moviepy flow_vis
+   mkdir checkpoints
+   cd checkpoints
+   wget https://huggingface.co/facebook/cotracker/resolve/main/cotracker2.pth
    ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
