@@ -26,7 +26,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/SysCV/sam-pt?tab=readme-ov-file">
-    <img src="https://centreborelli.ens-paris-saclay.fr/sites/centre_borelli/files/styles/img__480x320__crop_main/public/media/images/xlogo_mva_935x701.jpg,qitok=1BfZ2kri.pagespeed.ic.r35R1bGACN.jpg" alt="Logo" width="150" height="110">
+    <img src="https://centreborelli.ens-paris-saclay.fr/sites/centre_borelli/files/styles/img__480x320__crop_main/public/media/images/xlogo_mva_935x701.jpg,qitok=1BfZ2kri.pagespeed.ic.r35R1bGACN.jpg" alt="Logo" width="200" height="150">
   </a>
 
 <h3 align="center">Project RecVis 2023/2024 : SAM-PT</h3>
@@ -168,9 +168,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Oussama ZEKRI - oussama.zekri@ens-paris-saclay.fr - [@twitter_handle](https://twitter.com/oussamazekri_)
+Oussama ZEKRI - oussama.zekri@ens-paris-saclay.fr - [Twitter](https://twitter.com/oussamazekri_)
 
-Elyas BENYAMINA - elyas.benyamina@ens-paris-saclay.fr - [@twitter_handle](https://twitter.com/oussamazekri_)
+Elyas BENYAMINA - elyas.benyamina@ens-paris-saclay.fr
 
 [Project Link](https://github.com/ozekri/MVA/tree/main/RecVis/Project)
 
