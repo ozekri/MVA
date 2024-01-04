@@ -130,7 +130,7 @@ for i in range(len(points)):
         ecr_pos+=str(points[i][1])+','+str(points[i][2])+' ' #si le fichier n'existe pas, il est créé, sinon son contenu est écrasé
     else:
         ecr_neg+=str(points[i][1])+','+str(points[i][2])+' '
-final = str(points[0][0])+';' + ecr_pos +ecr_neg
+final = str(int(points[0][0]))+';' + ecr_pos +ecr_neg
 fichier.write(str(c)+'\n')
 fichier.write(final)
 fichier.close() #close the document

@@ -124,7 +124,7 @@ for i in range(len(points_2)-1):
 
 ecr_neg+=str(points_2[-1][1])+','+str(points_2[-1][2])+' '
 
-final = str(points_2[0][0])+';' + ecr_pos +ecr_neg
+final = str(int(points_2[0][0]))+';' + ecr_pos +ecr_neg
 fichier.write(str(n_2)+'\n')
 fichier.write(final)
 fichier.close()
