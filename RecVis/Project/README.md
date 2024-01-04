@@ -26,7 +26,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/SysCV/sam-pt?tab=readme-ov-file">
-    <img src="https://centreborelli.ens-paris-saclay.fr/sites/centre_borelli/files/styles/img__480x320__crop_main/public/media/images/xlogo_mva_935x701.jpg,qitok=1BfZ2kri.pagespeed.ic.r35R1bGACN.jpg" alt="Logo" width="100" height="80">
+    <img src="https://centreborelli.ens-paris-saclay.fr/sites/centre_borelli/files/styles/img__480x320__crop_main/public/media/images/xlogo_mva_935x701.jpg,qitok=1BfZ2kri.pagespeed.ic.r35R1bGACN.jpg" alt="Logo" width="150" height="110">
   </a>
 
 <h3 align="center">Project RecVis 2023/2024 : SAM-PT</h3>
@@ -66,13 +66,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
