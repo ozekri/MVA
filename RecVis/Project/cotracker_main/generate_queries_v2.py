@@ -7,7 +7,7 @@ from cotracker.utils.visualizer import Visualizer, read_video_from_path
 from cotracker.predictor import CoTrackerPredictor
 from IPython.display import HTML
 
-path_vid = os.path.abspath('../data/goat/anim.mp4') #path of a video
+path_vid = os.path.abspath('../data/lucia/anim.mp4') #path of a video
 
 video = read_video_from_path(path_vid)
 video = torch.from_numpy(video).permute(0, 3, 1, 2)[None].float()
@@ -116,7 +116,7 @@ points_2 = np.hstack((frames_num_2,x_rand_2,y_rand_2))
 queries_2 = torch.tensor(points_2.tolist())
 
 ###########
-nom='queries_goat.txt'      #on crée une variable de type string
+nom='queries_lucia.txt'      #on crée une variable de type string
 fichier=open(nom,'w')#ouverture du fichier en écriture : 'w' pour write
 ecr_pos,ecr_neg='',''
 for i in range(len(points_2)-1):
