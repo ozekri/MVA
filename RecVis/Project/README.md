@@ -159,7 +159,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,9 +168,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Oussama ZEKRI - oussama.zekri@ens-paris-saclay.fr - [@twitter_handle](https://twitter.com/oussamazekri_)
+Elyas BENYAMINA - elyas.benyamina@ens-paris-saclay.fr - [@twitter_handle](https://twitter.com/oussamazekri_)
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+[Project Link](https://github.com/ozekri/MVA/tree/main/RecVis/Project)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
