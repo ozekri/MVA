@@ -7,7 +7,7 @@ from cotracker.utils.visualizer import Visualizer, read_video_from_path
 from cotracker.predictor import CoTrackerPredictor
 from IPython.display import HTML
 
-path_vid = os.path.abspath('../data/goat/anim.mp4') #path of a video
+path_vid = os.path.abspath('../data/lucia/anim.mp4') #path of a video
 
 video = read_video_from_path(path_vid)
 video = torch.from_numpy(video).permute(0, 3, 1, 2)[None].float()
@@ -40,7 +40,7 @@ if torch.cuda.is_available():
 
 
 eps_L,eps_l = 100., 100.
-n=50
+n=150
 
 x_rand = np.random.rand(n,1)*(float(video.shape[4])-2*eps_L) + eps_L
 y_rand = np.random.rand(n,1)*(float(video.shape[3])-2*eps_l) + eps_l
@@ -122,7 +122,7 @@ for idx,p in enumerate(plist):
 print(c) #counter
 print(point_hash) #point list with labels
 
-nom='queries_goat.txt'      #on crée une variable de type string
+nom='queries_lucia.txt'      #on crée une variable de type string
 fichier=open(nom,'w')#ouverture du fichier en écriture : 'w' pour write
 ecr_pos,ecr_neg='',''
 for i in range(len(points)):
