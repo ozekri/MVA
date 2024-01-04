@@ -7,7 +7,7 @@ from cotracker.utils.visualizer import Visualizer, read_video_from_path
 from cotracker.predictor import CoTrackerPredictor
 from IPython.display import HTML
 
-path_vid = os.path.abspath('../data/bus/anim.mp4') #path of a video
+path_vid = os.path.abspath('../data/goat/anim.mp4') #path of a video
 
 video = read_video_from_path(path_vid)
 video = torch.from_numpy(video).permute(0, 3, 1, 2)[None].float()
@@ -18,11 +18,18 @@ def show_video(video_path): #function that display a video
 #show_video(path_vid)
 
 #Importing CoTrackerPredictor and creating an instance of it
+"""model = CoTrackerPredictor(
+    checkpoint=os.path.join(
+        './checkpoints/cotracker_stride_4_wind_8.pth'
+    )
+)"""
+
 model = CoTrackerPredictor(
     checkpoint=os.path.join(
-        './checkpoints/cotracker2.pth'
+        'C:/Users/dofel/Desktop/cotracker2.pth'
     )
 )
+
 
 if torch.cuda.is_available():
     model = model.cuda()

@@ -18,9 +18,15 @@ def show_video(video_path): #function that display a video
 #show_video(path_vid)
 
 #Importing CoTrackerPredictor and creating an instance of it
-model = CoTrackerPredictor(
+"""model = CoTrackerPredictor(
     checkpoint=os.path.join(
         './checkpoints/cotracker2.pth'
+    )
+)"""
+
+model = CoTrackerPredictor(
+    checkpoint=os.path.join(
+        'C:/Users/dofel/Desktop/cotracker2.pth'
     )
 )
 
