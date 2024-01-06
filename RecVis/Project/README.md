@@ -70,7 +70,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [![Python][Python]][Python-url]
+[![Python][Python]][Python-url] ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
