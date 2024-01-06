@@ -85,7 +85,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-A working version of CUDA and Pytorch...
+A working version of CUDA and Pytorch... (never forget : sometimes, rebooting will solve all your issues !)
 
 ### Installation
 
