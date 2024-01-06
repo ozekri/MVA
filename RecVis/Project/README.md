@@ -80,8 +80,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-The project contains a forked version of cotracker.
-This is an example of how you may give instructions on setting up your project locally.
+The project contains a forked version of [Cotracker 2.0](https://github.com/facebookresearch/co-tracker). You just have to install it as in the [initial repo](https://github.com/facebookresearch/co-tracker), and to load the chekpoints.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
