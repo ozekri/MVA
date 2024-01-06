@@ -174,9 +174,8 @@ Elyas BENYAMINA - elyas.benyamina@ens-paris-saclay.fr
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+We want to thank [SAM-PT](https://github.com/SysCV/sam-pt/tree/main), [SAM](https://github.com/facebookresearch/segment-anything), [PIPS](https://github.com/aharley/pips), [CoTracker](https://github.com/facebookresearch/co-tracker), [HQ-SAM](https://github.com/SysCV/sam-hq), [MobileSAM](https://github.com/ChaoningZhang/MobileSAM), [XMem](https://github.com/hkchengrex/XMem), and [Mask2Former](https://github.com/facebookresearch/Mask2Former) for publicly releasing their code and pretrained models.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
