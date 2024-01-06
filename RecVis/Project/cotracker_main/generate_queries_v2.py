@@ -63,19 +63,16 @@ pred_tracks, pred_visibility = model(video, queries=queries[None])
 
 def sum_speed(l):
     res = 0
-    normlk = [np.linalg.norm(l[-1])]
     for i in range(len(l)-1):
         res += np.linalg.norm(l[i]-l[i+1])
-        normlk.append(np.linalg.norm(l[i]))
-    normk = sum(normlk)
-    return res, normk
+    return res
 #create a big list L with the couples [res,normk]
 
 def normalized_speed(L): #return a list with all the normalized speed
-    norm = np.amax(np.array(L)[:,1])
+    norm = np.amax(np.array(L))
     res = []
     for elem in L:
-        res.append(elem[0]/norm)
+        res.append(elem/norm)
     return res
 
 def is_positive(p,tresh):
@@ -94,7 +91,7 @@ normalized_s = normalized_speed(L)
    
 c=0 #counter of posiitve points
 point_hash={} #hasmap with the points index in key and the label True if positive, False if negative in values
-tresh = 0.008 #treshold : posiitve or negative.
+tresh = 0.3 #treshold : posiitve or negative.
 
 for idx,p in enumerate(normalized_s):
     if is_positive(p,tresh):

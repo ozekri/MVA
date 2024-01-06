@@ -7,7 +7,17 @@ from cotracker.utils.visualizer import Visualizer, read_video_from_path
 from cotracker.predictor import CoTrackerPredictor
 from IPython.display import HTML
 
-path_vid = os.path.abspath('../data/hockey/anim.mp4') #path of a video
+##Parameters
+path_vid = os.path.abspath('../data/bus/anim.mp4') #path of a video
+is_checkpoint = False #True if the cotracker chkpt is in the right folder, False otherwise (if False, put the path to the checkpoint in "checkpoint_path")
+checkpoint_path = 'C:/Users/dofel/Desktop/cotracker2.pth'
+
+display_blank_vid = False #True if you want to display the original video at the beginning of the code, False otherwise
+display_vid = True #True if you want to display the video after the code executes, False otherwise
+display_details = True #True if you want to display the number of positive points and their classification during the first sampling
+
+n=50 #Number of points for the first sampling
+eps_L,eps_l = 100., 100. #Sampling edges
 
 video = read_video_from_path(path_vid)
 video = torch.from_numpy(video).permute(0, 3, 1, 2)[None].float()
@@ -15,20 +25,13 @@ video = torch.from_numpy(video).permute(0, 3, 1, 2)[None].float()
 def show_video(video_path): #function that display a video
     os.startfile(video_path)
     
-#show_video(path_vid)
+if display_blank_vid: show_video(path_vid)
 
 #Importing CoTrackerPredictor and creating an instance of it
-"""model = CoTrackerPredictor(
-    checkpoint=os.path.join(
-        './checkpoints/cotracker2.pth'
-    )
-)"""
-
-model = CoTrackerPredictor(
-    checkpoint=os.path.join(
-        'C:/Users/dofel/Desktop/cotracker2.pth'
-    )
-)
+if is_checkpoint:
+    model = CoTrackerPredictor(checkpoint=os.path.join('./checkpoints/cotracker2.pth'))
+else:
+    model = CoTrackerPredictor(checkpoint=os.path.join(checkpoint_path))
 
 
 if torch.cuda.is_available():
@@ -49,81 +52,56 @@ frames_num = np.zeros((1,n),dtype=int).T
 points = np.hstack((frames_num,x_rand,y_rand))
 
 queries = torch.tensor(points.tolist())
-#print(points)
 
-"""queries = torch.tensor([
-    [0., eps_L, eps_l],  # point tracked from the first frame
-    [0., float(video.shape[4])-eps_L, eps_l], # frame number 0
-    [0., eps_l, float(video.shape[3])-eps_l], # ...
-    [0., float(video.shape[4])-eps_L, float(video.shape[3])-eps_l]
-])
-
-queries = torch.tensor([
-    [0., 400., 350.],  # point tracked from the first frame
-    [0., 600., 500.], # frame number 10
-    [0., 750., 600.], # ...
-    [0., 900., 200.]
-])"""
 if torch.cuda.is_available():
     queries = queries.cuda()
-    
-"""
-import matplotlib.pyplot as plt
-# Create a list of frame numbers corresponding to each point
-frame_numbers = queries[:,0].int().tolist()
 
-fig, axs = plt.subplots(2, 2)
-axs = axs.flatten()
-
-for i, (query, frame_number) in enumerate(zip(queries, frame_numbers)):
-    ax = axs[i]
-    ax.plot(query[1].item(), query[2].item(), 'ro') 
-    
-    ax.set_title("Frame {}".format(frame_number))
-    ax.set_xlim(0, video.shape[4])
-    ax.set_ylim(0, video.shape[3])
-    ax.invert_yaxis()
-    
-plt.tight_layout()
-plt.show()
-
-"""
 
 
 pred_tracks, pred_visibility = model(video, queries=queries[None])
 
-def sum_dist(liste):
+def sum_speed(l):
     res = 0
-    norml = [np.linalg.norm(liste[-1])]
-    for i in range(len(liste)-1):
-        res += np.linalg.norm(liste[i]-liste[i+1])
-        norml.append(np.linalg.norm(liste[i]))
-    norm = sum(norml)
-    return res/norm
+    for i in range(len(l)-1):
+        res += np.linalg.norm(l[i]-l[i+1])
+    return res
+#create a big list L with the couples [res,normk]
 
-def is_Positive(pt,tresh):
-    if sum_dist(pt) > tresh: return False
+def normalized_speed(L): #return a list with all the normalized speed
+    norm = np.amax(np.array(L))
+    res = []
+    for elem in L:
+        res.append(elem/norm)
+    return res
+
+def is_positive(p,tresh):
+    if p > tresh: return False
     else: return True
-    
-plist=[]
+
+traj_list=[]
 for i in range(n):
-    plist.append(pred_tracks[0,:,i].cpu().numpy())
+    traj_list.append(pred_tracks[0,:,i].cpu().numpy())
+
+L=[]
+for traj in traj_list:
+    L.append(sum_speed(traj))
+
+normalized_s = normalized_speed(L)
 
 c=0
 point_hash={} #hasmap with the points index in key and the label True if positive, False if negative in values
-tresh = 0.008
-for idx,p in enumerate(plist):
-    #print(sum_dist(p))
-    #print(is_Positive(p,0.02))
-    if is_Positive(p,tresh):
+tresh = 0.5
+for idx,p in enumerate(normalized_s):
+    if is_positive(p,tresh):
         c+=1
         point_hash[idx] = True
     else: point_hash[idx] = False
   
-print(c) #counter
-print(point_hash) #point list with labels
+if display_details:
+    print(c) #counter
+    print(point_hash) #point list with labels
 
-nom='queries_hockey.txt'      #on crée une variable de type string
+nom='queries_bus.txt'      #on crée une variable de type string
 fichier=open(nom,'w')#ouverture du fichier en écriture : 'w' pour write
 ecr_pos,ecr_neg='',''
 for i in range(len(points)):
@@ -149,4 +127,4 @@ vis.visualize(
     filename='queries');
 
 path_show = os.path.abspath("./videos/queries.mp4")
-show_video(path_show)
+if display_vid: show_video(path_show)
