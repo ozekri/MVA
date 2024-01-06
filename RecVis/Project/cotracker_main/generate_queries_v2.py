@@ -8,7 +8,7 @@ from cotracker.predictor import CoTrackerPredictor
 from IPython.display import HTML
 
 ##Parameters
-path_vid = os.path.abspath('../data/swing/anim.mp4') #path of a video
+path_vid = os.path.abspath('../data/bus/anim.mp4') #path of a video
 is_checkpoint = False #True if the cotracker chkpt is in the right folder, False otherwise (if False, put the path to the checkpoint in "checkpoint_path")
 checkpoint_path = 'C:/Users/dofel/Desktop/cotracker2.pth'
 
@@ -91,7 +91,7 @@ normalized_s = normalized_speed(L)
    
 c=0 #counter of posiitve points
 point_hash={} #hasmap with the points index in key and the label True if positive, False if negative in values
-tresh = 0.3 #treshold : posiitve or negative.
+tresh = 0.5 #treshold : posiitve or negative.
 
 for idx,p in enumerate(normalized_s):
     if is_positive(p,tresh):
@@ -161,7 +161,7 @@ queries_2 = torch.tensor(points_2.tolist())
 
 #Here, we are creating the queries text file
 
-nom='queries_swing_new.txt'
+nom='queries_bus_new.txt'
 fichier=open(nom,'w')
 ecr_pos,ecr_neg='',''
 
