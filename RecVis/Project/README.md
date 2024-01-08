@@ -64,7 +64,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+SAM-PT requires input from a user (by clicking on frames to provide positive / negative ground truths) or a mask. The goal of this project is to fully automate the process of SAM-PT.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,23 +109,8 @@ A working version of CUDA and Pytorch... (never forget : sometimes, rebooting wi
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+In the *cotracker_main* folder, use the codes *generate_queries.py* and *generate_queries_v2.py* to generate a *.txt* file containing the formatted queries for SAM-PT.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
