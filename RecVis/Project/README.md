@@ -109,7 +109,7 @@ A working version of CUDA and Pytorch... (never forget : sometimes, rebooting wi
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-In the *cotracker_main* folder, use the codes *generate_queries.py* and *generate_queries_v2.py* to generate a *.txt* file containing the formatted queries for SAM-PT.
+In the **cotracker_main** folder, use the codes `generate_queries.py` and `generate_queries_v2.py` to generate a *.txt* file containing the formatted queries for SAM-PT. Change the parameters of theses codes as needed.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
