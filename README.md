@@ -7,6 +7,6 @@
   </a>
 </div>
  
-This directory contains the assignemnts and projects I carried out as part of my year at the [MVA master's program](https://www.master-mva.com/), from October 2023 to April 2024.
+This repository contains the assignments and projects I carried out as part of my year at the [MVA master's program](https://www.master-mva.com/), from October 2023 to April 2024.
 
 Don't hesitate to star the repository, and feel free to shot me an email if you want to know more about the files of this repo.
