@@ -1,3 +1,5 @@
+### >>> https://github.com/ozekri/CKN_from_Scratch/tree/main <<< for the code !
+
 # CKN from Scratch
 Implementation from scratch, without ML librairies, of the Convolutional Kernel Network of [[Mairal, 2016](https://proceedings.neurips.cc/paper_files/paper/2016/file/fc8001f834f6a5f0561080d134d53d29-Paper.pdf)].
 
