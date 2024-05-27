@@ -64,7 +64,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-SAM-PT requires input from a user (by clicking on frames to provide positive / negative ground truths) or a mask. The goal of this project is to fully automate the process of SAM-PT.
+Learning Costs for Structured Monge Displacements.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
