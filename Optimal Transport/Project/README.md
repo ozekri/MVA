@@ -80,8 +80,7 @@ Learning Costs for Structured Monge Displacements.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-The project contains a forked version of [Cotracker 2.0](https://github.com/facebookresearch/co-tracker). You just have to install it as in the [initial repo](https://github.com/facebookresearch/co-tracker), and to load the chekpoints.
-To get a local copy up and running follow these simple example steps.
+The project contains some code written in JAX.
 
 ### Prerequisites
 
