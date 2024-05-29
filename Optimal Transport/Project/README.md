@@ -84,7 +84,7 @@ The project contains some code written in JAX.
 
 ### Prerequisites
 
-A working version of CUDA and Pytorch... (never forget : sometimes, rebooting will solve all your issues !)
+TODO
 
 ### Installation
 
