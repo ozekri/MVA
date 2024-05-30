@@ -90,7 +90,7 @@ TODO
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ozekri/MVA/main/RecVis/Project
+   git clone https://github.com/ozekri/MVA/tree/main/Optimal%20Transport/Project
    ```
 2. Install co-tracker and download the checkpoints of cotracker2
    ```sh
