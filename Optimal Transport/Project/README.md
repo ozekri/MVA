@@ -92,14 +92,9 @@ TODO
    ```sh
    git clone https://github.com/ozekri/MVA/tree/main/Optimal%20Transport/Project
    ```
-2. Install co-tracker and download the checkpoints of cotracker2
+2. Install requirements
    ```sh
-   cd co-tracker
    pip install -e .
-   pip install opencv-python einops timm matplotlib moviepy flow_vis
-   mkdir checkpoints
-   cd checkpoints
-   wget https://huggingface.co/facebook/cotracker/resolve/main/cotracker2.pth
    ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
