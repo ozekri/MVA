@@ -142,8 +142,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Oussama ZEKRI - oussama.zekri@ens-paris-saclay.fr - [Twitter](https://twitter.com/oussamazekri_)
 
-Elyas BENYAMINA - elyas.benyamina@ens-paris-saclay.fr
-
 [Project Link](https://github.com/ozekri/MVA/tree/main/RecVis/Project)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -153,8 +151,7 @@ Elyas BENYAMINA - elyas.benyamina@ens-paris-saclay.fr
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* We want to thank [SAM-PT](https://github.com/SysCV/sam-pt/tree/main) and [CoTracker](https://github.com/facebookresearch/co-tracker) for publicly releasing their code and pretrained models.
-* We want to thank our Teacher and Advisor Gül Varol and Guillaume Le Moing
+* I want to thank my Professor for this course, Gabriel Peyré.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
